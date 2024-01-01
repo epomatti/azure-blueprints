@@ -34,19 +34,3 @@ resource "azurerm_policy_definition" "policy" {
   })
 }
 
-data "azurerm_subscription" "current" {
-}
-
-resource "azurerm_subscription_policy_assignment" "policy" {
-  name                 = "BlueprintLocationPolicyAssignment"
-  subscription_id      = data.azurerm_subscription.current.id
-  policy_definition_id = azurerm_policy_definition.policy.id
-  description          = "Assignment of BlueprintLocationPolicy"
-  display_name         = "BlueprintLocationPolicyAssignment"
-
-  parameters = jsonencode({
-    allowedLocations = {
-      value = ["${var.location}"]
-    }
-  })
-}
