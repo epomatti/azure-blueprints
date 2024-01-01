@@ -26,10 +26,10 @@ For the assignment, set all of the parameters and 'Assign'. Choosing `System ass
 
 > By clicking "Assign" with a system assigned identity, you agree to grant the Azure Blueprints service temporary Owner access to this subscription so that we can properly deploy all Artifacts. We will automatically remove this access when the blueprint assignment process is finished.
 
-Wait for the provisioning to be complete.
+Wait for the assignment (deployment) to be complete.
 
 Now update the definition, adding the [./arm/nsg](./arm/nsg) ARM template, and save a new draft.
 
 Publish a new version `1.1`.
 
-Update the assignment to version `1.1`.
+Update the assignment to version `1.1`, which will deploy the new NSG resource.
